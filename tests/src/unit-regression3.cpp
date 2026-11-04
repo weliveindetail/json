@@ -447,7 +447,7 @@ TEST_CASE("regression tests 3")
         // This test makes sure we now return "invalid" instead.
         json j;
         j.m_data.m_type = static_cast<json::value_t>(100); // NOLINT(clang-analyzer-optin.core.EnumCastOutOfRange)
-        CHECK(j.type_name() == "invalid");
+        CHECK(std::string(j.type_name()) == "invalid");
     }
 #endif
 
